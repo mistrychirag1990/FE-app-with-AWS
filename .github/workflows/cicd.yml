@@ -1,0 +1,21 @@
+  name: frontend CI/CD
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use node js 22
+        uses: actions/setup-node@v2
+        with:
+          node-version: 22
+      - name: Install dependecies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        run: npm run deploy
+
+
