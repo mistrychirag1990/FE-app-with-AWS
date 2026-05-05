@@ -47,7 +47,7 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
-          source: "./"
+          source: "dist/*"
           target: "~/frontend-app"
 
       - name: Run app on EC2 with PM2
